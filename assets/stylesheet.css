@@ -1,0 +1,20 @@
+.container {
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+
+.row {
+	text-align: center;
+}
+
+button {
+	background-color: white;
+	border: 1px solid orange;
+	padding:5px 10px;
+	margin: 5px;
+}
+
+.gifDiv {
+	display: inline-block;
+	padding: 5px;
+}
