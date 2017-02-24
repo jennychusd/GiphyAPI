@@ -1,5 +1,15 @@
+h1 {
+	text-transform: uppercase;
+	color: #ffd700;
+	font-weight: bold;
+	font-size: 50px;
+	letter-spacing: 1px;
+	-webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: black;
+
+}
 .container {
-	font-family: 'Open Sans', Arial, sans-serif;
+	font-family: 'Raleway', Arial, sans-serif;
 }
 
 
@@ -17,4 +27,8 @@ button {
 .gifDiv {
 	display: inline-block;
 	padding: 5px;
+}
+
+#add-person {
+	border: 1px solid black;
 }

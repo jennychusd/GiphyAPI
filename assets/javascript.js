@@ -1,5 +1,7 @@
 var game = {
 	topics: ["luke skywalker", "darth vader", "obiwan kanobi", "r2d2"],
+	placeholder: ["yoda", "anakin skywalker", "han solo", "leia organa", "chewbacca", "kylo ren", "boba fett", "padme amidala", "sheev palpatine", "darth maul", "jabba the hutt"],
+	placeholderIndex: 0,
 
 	renderButtons: function() {
 		console.log("renderButtons function called");
@@ -22,7 +24,7 @@ var game = {
 		// clear existing gifs
 		$("#gifsHolder").empty();
 		var person = $(this).attr("data-person");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=10&rating=g";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=10&rating=g";
 
         // create ajax call for button clicked
         $.ajax({
@@ -71,14 +73,15 @@ var game = {
   	addPerson: function() {
   		console.log("addPerson function called");
 		// This line grabs the input from the textbox
-		var newPerson = $("#character-input").val().trim();
-
-		// Adding movie from the textbox to our array
-		game.topics.push(game.newPerson);
+		game.topics.push($("#character-input").val().trim());
 
 		// Calling renderButtons which handles the processing of our movie array
-		console.log("calling renderButtons function")
 		game.renderButtons();
+
+		// clear and change placeholder text in input
+		$("#character-input").val("");
+		$("#character-input").attr("placeholder", game.placeholder[game.placeholderIndex]);
+		game.placeholderIndex++;
   	},
 };
 
